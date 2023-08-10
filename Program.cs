@@ -48,16 +48,28 @@ int Count(string[] array)
     return a;
 }
 
+void FillCutted(string[] array, string[] newArray)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+            for (int j = 0; j < newArray.Length; j++)
+            {
+                newArray[j] = array[i]; 
+                i++;
+            }
+    }
+}
+
 int size = InputNum("Enter array size: ");
 string[] myArray = CreateArray(size);
 FillArray(myArray);
 string txt = PrintArray(myArray);
-Console.WriteLine(txt);
+Console.WriteLine($"First array: {txt}");
 Console.WriteLine();
 int secondSize = Count(myArray);
 string[] secondArray = CreateArray(secondSize);
 Console.WriteLine();
-// FillArray(secondArray);
-// string secondTxt = PrintArray(secondArray);
-// Console.WriteLine(secondTxt);
-//Console.WriteLine(txt);
+FillCutted(myArray, secondArray);
+string secondTxt = PrintArray(secondArray);
+Console.WriteLine($"Cutted array: {secondTxt}");
