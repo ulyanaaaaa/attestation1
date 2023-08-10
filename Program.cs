@@ -73,3 +73,4 @@ Console.WriteLine();
 FillCutted(myArray, secondArray);
 string secondTxt = PrintArray(secondArray);
 Console.WriteLine($"Cutted array: {secondTxt}");
+
