@@ -34,14 +34,19 @@ string PrintArray(string[] array)
         return res;
 }
 
-void CutArray(string[] array)
+int Count(string[] array)
 {
+    int a = 0;
     for (int i = 0; i < array.Length; i++)
     {
         Console.WriteLine("Length of {0} is {1}", array[i], array[i].Length);
+        if (array[i].Length <= 3)
+        {
+            a++;
+        }
     }
+    return a;
 }
-
 
 int size = InputNum("Enter array size: ");
 string[] myArray = CreateArray(size);
@@ -49,5 +54,10 @@ FillArray(myArray);
 string txt = PrintArray(myArray);
 Console.WriteLine(txt);
 Console.WriteLine();
-CutArray(myArray);
+int secondSize = Count(myArray);
+string[] secondArray = CreateArray(secondSize);
+Console.WriteLine();
+// FillArray(secondArray);
+// string secondTxt = PrintArray(secondArray);
+// Console.WriteLine(secondTxt);
 //Console.WriteLine(txt);
